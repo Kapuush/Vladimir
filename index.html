@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+ <head>
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="Loop Nerd" content="Filter javascript - Abas de navegação" />
+    <meta name="description" content="Como fazer abas de navegação com html, css e javascript"/>
+    <meta name="keywords" content="Html, Css, Jquery, Wordpress, Sites Grátis, Tema para Wordpress, Site Responsivo"/>
+    <meta name="author" content="Loop Nerd" />
+    <meta name="URL" content="https://www.loopnerd.com.br/artigos/jquery/data-filter-javascript/"/>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow"/>
+    
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->       
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts-icones.css">
+    <link rel="shortcut icon" href="https://pm1.aminoapps.com/7942/0d3325fbba5f73f937b9eed4c0083879b6724ddfr1-300-300v2_00.jpg"type="image/ico" />
+
+	<title> Vladimir </title>
+
+ </head>
+
+<body>
+    
+<header class="main_header container">        
+    <div class="content">
+    
+        <div class="main_header_logo">
+            <img src="img/logo.jpg" alt="logo.jpg" title="Kapuush"/>
+        </div>
+    
+    </div>
+</header>
+
+<main class="main_content container">
+
+        
+    <section class="section-seu-codigo container">
+        
+        <div class="content">
+            
+            <h1 class="section_title"></i>VLADIMIR</h1>
+            
+            <div class="box-artigo">
+
+                <ul class="abas">
+
+                  <li><a href="" class="Skins" data-filter="Skins">Skins</a></li>
+                  <li><a href="" class="Runas" data-filter="Runas">Runas</a></li>
+                  <li><a href="" class="biuld" data-filter="biuld">Biuld</a></li>
+                  <li><a href="" class="Imagens" data-filter="Imagens">Imagens</a></li>
+
+                </ul>
+
+                <ul class="lista-categoria">
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="uploads/02.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="img/07.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="img/03.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="img/04.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="img/05.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="img/06.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="img/08.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Skins" data-categoria="Skins"> 
+                        <img src="img/09.jpg" alt="Skins" title="Skins">
+                    </li>
+
+                    <li class="Runas" data-categoria="Runas">
+                        <img src="img/20.jpg" alt="Runas" title="Runas">
+                    </li>
+
+                    <li class="biuld" data-categoria="biuld">
+                        <img src="img/Screenshot_1.jpg" alt="biuld" title="biuld">
+                    </li>
+                    
+                    <li class="Imagens" data-categoria="Imagens">
+                        <img src="img/21.jpg" alt="Imagens" title="Imagens">
+                    </li>
+
+
+                 </ul>
+
+                <!--Fecha abas de navegação-->
+
+            </div><!--Box Artigo-->
+
+
+        <div class="clear"></div>
+        </div>
+    </section><!--FECHA BOX HTML-->
+
+
+</main>
+
+<footer class="main_footer container">
+    <div class="main_footer_copy">
+
+        <p class="m-b-footer"> Kapuush - 2023, todos os direitos reservados.</p> 
+        <p class="by"><i class=""></i> Desenvolvido por: github.com/Kapuush</p>
+    
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+<script>
+    
+    $(function(){
+      
+      var $btn  = $('.abas [data-filter]'),
+          $lista = $('.lista-categoria [data-categoria]');
+       
+      $btn.on('click', function() {
+        
+        var $btnCategoria = $(this).attr('data-filter');
+        
+        $lista.removeClass('animacao');
+
+        if ($btnCategoria == 'tudo') {
+
+            $lista.show().addClass('animacao');
+
+        } else {
+           
+           $lista.hide().removeClass('animacao').filter('[data-categoria = "' + $btnCategoria + '"]').show().addClass('animacao');
+        }
+
+        return false;
+        
+      });
+
+    });
+
+
+</script>
+
+</body>
+</html>
